@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-oswald text-textTitle font-bold;
+  }
+
+  /* Dark mode typography base */
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    @apply text-white tracking-wide;
+  }
+}
+
+@layer utilities {
+  /* Text shadow for hero legibility */
+  .text-shadow {
+    text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.6);
+  }
+  .text-shadow-sm {
+    text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Green gradient text for accent words */
+  .text-gradient-green {
+    background: linear-gradient(135deg, #22A32B 0%, #34D399 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Radial glow from dark purple corner — dark mode section backgrounds */
+  .dark-section-bg {
+    background: radial-gradient(
+      ellipse at top left,
+      rgba(45, 20, 66, 0.55) 0%,
+      #121212 60%
+    );
+  }
+
+  /* Alternative: glow from bottom right */
+  .dark-section-bg-alt {
+    background: radial-gradient(
+      ellipse at bottom right,
+      rgba(45, 20, 66, 0.45) 0%,
+      #121212 60%
+    );
+  }
+
+  /* Glassmorphism surface (used in dropdowns & navbar) */
+  .glass {
+    background: rgba(30, 30, 30, 0.75);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border: 0.5px solid rgba(102, 45, 145, 0.2);
+  }
+
+  /* Light mode glass (white tinted) */
+  .glass-light {
+    background: rgba(255, 255, 255, 0.85);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border: 0.5px solid rgba(229, 229, 229, 0.6);
+  }
+}
