@@ -8,7 +8,7 @@ const cardVariants = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.52, delay: (i % 3) * 0.10, ease: 'easeOut' },
+    transition: { duration: 0.52, delay: (i % 3) * 0.10, ease: 'easeOut' as const },
   }),
 };
 
@@ -72,7 +72,7 @@ export const Gallery = () => {
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ duration: 0.5, delay: 0.25, ease: 'easeOut' }}
+          transition={{ duration: 0.5, delay: 0.25, ease: 'easeOut' as const }}
           className="h-1.5 w-20 bg-primary mx-auto mt-4 origin-left rounded-full"
         />
         <p className="mt-5 text-gray-600 dark:text-dk-text-muted text-lg max-w-xl mx-auto leading-relaxed">

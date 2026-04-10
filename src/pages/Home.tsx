@@ -3,7 +3,7 @@ import { ArrowRight, Calendar, Trophy, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 // ── WordPress-ready: swap this URL in the theme's template tag ──
-const HERO_VIDEO_URL = 'videos/promo-borriol.mp4';
+const HERO_VIDEO_URL = `${import.meta.env.BASE_URL}videos/promo-borriol.mp4`;
 
 export const Home = () => {
   return (
@@ -54,7 +54,7 @@ export const Home = () => {
                 <motion.div
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.8, delay: 1, ease: 'easeOut' }}
+                  transition={{ duration: 0.8, delay: 1, ease: 'easeOut' as const }}
                   className="absolute -bottom-2 left-0 w-full h-1.5 bg-primary origin-left rounded-full"
                 />
               </span>
@@ -62,14 +62,14 @@ export const Home = () => {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-10 max-w-2xl font-medium leading-relaxed text-shadow-sm">
-              Formamos deportistas en hockey línea y patinaje artístico con pasión,
-              esfuerzo y valores. Únete a la familia del T-Rex.
+              Formamos deportistas en hockey línea y patinaje artístico en línea con pasión,
+              compromiso y los más altos estándares deportivos. Únete a la familia del T-Rex.
             </p>
 
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.5, ease: 'easeOut' }}
+              transition={{ duration: 0.7, delay: 0.5, ease: 'easeOut' as const }}
               className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center"
             >
               <Link
@@ -209,7 +209,7 @@ export const Home = () => {
                 key={item.id}
                 variants={{
                   hidden: { opacity: 0, y: 30 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' as const } },
                 }}
                 className="group relative bg-white dark:bg-dk-surface dark:glass rounded-xl shadow-sm hover:shadow-xl border border-gray-100 dark:border-dk-border hover:-translate-y-2 transition-all duration-300 cursor-pointer flex flex-col h-full overflow-hidden"
               >

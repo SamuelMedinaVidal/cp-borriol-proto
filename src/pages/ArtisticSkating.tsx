@@ -28,8 +28,8 @@ const FEATURE_CARDS = [
 ] as const;
 
 const SCHEDULE_ROWS: ScheduleRow[] = [
-  { label: 'Iniciación I y II',        days: 'Lunes y Miércoles',    time: '17:30 - 18:30' },
-  { label: 'Avanzado Promesas',         days: 'Martes y Jueves',       time: '18:30 - 20:00' },
+  { label: 'Iniciación I y II', days: 'Lunes y Miércoles', time: '17:30 - 18:30' },
+  { label: 'Avanzado Promesas', days: 'Martes y Jueves', time: '18:30 - 20:00' },
   { label: 'Grupo Show / Competición', days: 'Viernes y Sábado am.', time: '19:00 - 21:00' },
 ];
 
@@ -45,8 +45,8 @@ FeatureCard.displayName = 'FeatureCard';
 export const ArtisticSkating = () => (
   <div className="min-h-screen bg-neutralMuted dark:bg-dk-bg transition-colors duration-300">
     <PageHero
-      title="Patinaje"
-      accentWord="Artístico"
+      title="Patinaje Artístico en Línea"
+      accentWord="en Línea"
       subtitle="Elegancia, técnica y expresión. Transforma el deporte en un arte sobre las cuatro ruedas."
       bgColorClass="bg-secondary"
     />
@@ -59,7 +59,7 @@ export const ArtisticSkating = () => (
       </div>
 
       <ScheduleTable
-        title="Grupos de Patinaje Artístico"
+        title="Grupos de Patinaje Artístico en Línea"
         rows={SCHEDULE_ROWS}
         headerBgClass="bg-primary"
         accentColorClass="bg-secondary/10 text-secondary dark:bg-dk-purple/20 dark:text-dk-purple"

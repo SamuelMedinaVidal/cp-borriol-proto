@@ -1,4 +1,5 @@
 import { Camera, Heart, MessageCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const posts = [
   { id: 1, image: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=400&q=80', likes: 124, comments: 8  },
@@ -14,18 +15,28 @@ export const Social = () => {
     <div className="min-h-screen bg-neutralMuted dark:bg-dk-bg py-16 px-4 transition-colors duration-300">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-14 flex flex-col items-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-14 flex flex-col items-center"
+        >
           <div className="bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 p-1 rounded-full mb-6">
             <div className="bg-white dark:bg-dk-surface p-4 rounded-full">
               <Camera size={48} className="text-textTitle dark:text-white" />
             </div>
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-textTitle dark:text-white uppercase mb-4">Redes Sociales</h1>
-          <div className="h-1 w-20 bg-secondary dark:bg-dk-purple mx-auto mb-4"></div>
+          <motion.div 
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.5, delay: 0.25, ease: 'easeOut' as const }}
+            className="h-1 w-20 bg-secondary dark:bg-dk-purple mx-auto mb-4 origin-left rounded-full"
+          ></motion.div>
           <p className="text-gray-600 dark:text-gray-300 max-w-xl">
             Síguenos para no perderte las mejores jugadas, piruetas y el día a día de nuestro gran club deportivo en Borriol.
           </p>
-        </div>
+        </motion.div>
 
         {/* Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 mb-16">

@@ -8,10 +8,14 @@ import { Championships } from './pages/Championships';
 import { Rules } from './pages/Rules';
 import { Gallery } from './pages/Gallery';
 import { Social } from './pages/Social';
+import { Links } from './pages/Links';
+import { ScrollToTop } from './components/utils/ScrollToTop';
 
 function App() {
   return (
-    <Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="news" element={<News />} />
@@ -21,8 +25,10 @@ function App() {
         <Route path="rules" element={<Rules />} />
         <Route path="gallery" element={<Gallery />} />
         <Route path="social" element={<Social />} />
+        <Route path="links" element={<Links />} />
       </Route>
-    </Routes>
+      </Routes>
+    </>
   );
 }
 

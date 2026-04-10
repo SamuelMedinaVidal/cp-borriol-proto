@@ -12,7 +12,7 @@ export const Footer = () => {
           <div className="space-y-4">
             <Link to="/" className="inline-block group">
               <img
-                src="/logo.png"
+                src={`${import.meta.env.BASE_URL}logo.png`}
                 alt="Club Patinatge Borriol Logo"
                 className="h-24 w-auto object-contain transform group-hover:scale-105 transition-transform duration-300 drop-shadow-md bg-white rounded-xl p-1"
                 onError={(e) => {
@@ -29,7 +29,13 @@ export const Footer = () => {
               El club de referencia en la provincia de Castellón. Pasión, esfuerzo y deportividad sobre ruedas.
             </p>
             <div className="flex space-x-4 pt-2">
-              <a href="#" className="text-gray-500 hover:text-primary transition-colors" aria-label="Instagram">
+              <a 
+                href="#" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-500 hover:text-primary transition-colors" 
+                aria-label="Instagram"
+              >
                 <Camera size={22} />
               </a>
             </div>
@@ -67,8 +73,36 @@ export const Footer = () => {
           </div>
         </div>
 
+        {/* Institutional Logos (Grayscale Effect) */}
+        <div className="mt-16 pt-10 border-t border-gray-800">
+          <p className="text-center text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-8 font-bold">Organismos Oficiales</p>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-70">
+            {[
+              { name: 'FPCV', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRyNm9cvtP20WfguKhnvJ5m9YGpNIEMTf9Rw&s', url: 'https://fpcv.info/' },
+              { name: 'RFEP', logo: 'https://fep.es/img/logo-rfep.png', url: 'https://fep.es/' },
+              { name: 'Ayto Borriol', logo: 'https://www.borriol.es/wp-content/uploads/2023/05/Logo-Ajuntament-de-Borriol-escut-horitz-color.png', url: 'https://www.borriol.es/' },
+              { name: 'GVA Deporte', logo: 'https://presidencia.gva.es/documents/161862862/162432465/boton_comunitat_esport.png/0112fe92-0032-03d8-916e-3bdd2ac6a8c8?t=1746773088193', url: 'https://ceice.gva.es/es/web/deporte' },
+            ].map((item) => (
+              <a 
+                key={item.name} 
+                href={item.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:scale-110 transition-transform duration-500"
+              >
+                <img
+                  src={item.logo}
+                  alt={item.name}
+                  className="h-10 w-auto grayscale contrast-125 brightness-150 hover:grayscale-0 transition-all duration-500"
+                />
+              </a>
+            ))}
+          </div>
+        </div>
+
         <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-600 text-sm">
           <p>&copy; {new Date().getFullYear()} Club Patinatge Borriol. Todos los derechos reservados.</p>
+          <p className="mt-2 text-[10px] uppercase tracking-widest text-gray-700">Diseño y desarrollo por <span className="text-gray-500 font-bold">5SV Informática</span></p>
         </div>
       </div>
     </footer>

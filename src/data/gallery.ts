@@ -41,7 +41,7 @@ export interface GalleryImage {
 // ── Etiquetas visuales y estilos por categoría ──────────────────
 export const CATEGORY_LABELS: Record<GalleryCategory, string> = {
   hockey:     'Hockey Línea',
-  artistic:   'Patinaje Artístico',
+  artistic:   'Patinaje Artístico en Línea',
   tournament: 'Torneo',
   club:       'Club',
   facilities: 'Instalaciones',
@@ -111,7 +111,7 @@ export const galleryImages: GalleryImage[] = [
   {
     id: 8,
     url: 'https://images.unsplash.com/photo-1533230635293-d14b436ebd69?auto=format&fit=crop&w=900&q=80',
-    alt: 'Clase de iniciación al patinaje artístico',
+    alt: 'Clase de iniciación al patinaje artístico en línea',
     caption: 'Clase de Iniciación',
     category: 'artistic',
   },

@@ -1,4 +1,5 @@
 import { FileText, Download } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export const Rules = () => {
   const documents = [
@@ -10,11 +11,21 @@ export const Rules = () => {
 
   return (
     <div className="min-h-screen bg-neutralMuted dark:bg-dk-bg py-12 px-4 max-w-4xl mx-auto w-full transition-colors duration-300">
-      <div className="mb-12 text-center pt-6">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="mb-12 text-center pt-6"
+      >
         <h1 className="text-5xl font-extrabold text-textTitle dark:text-white uppercase mb-4">Descargas</h1>
-        <div className="w-24 h-1.5 bg-secondary dark:bg-dk-purple mx-auto mb-6"></div>
+        <motion.div 
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.5, delay: 0.25, ease: 'easeOut' as const }}
+          className="w-24 h-1.5 bg-secondary dark:bg-dk-purple mx-auto mb-6 origin-left rounded-full"
+        ></motion.div>
         <p className="text-lg text-gray-600 dark:text-gray-300">Documentación oficial, reglamentos y formularios del club.</p>
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {documents.map((doc, idx) => (

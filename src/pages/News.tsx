@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const newsItems = [
   { id: 1, title: 'Gran victoria en el derbi provincial', date: '10 Abril 2026', category: 'Hockey' },
@@ -12,11 +13,21 @@ const newsItems = [
 export const News = () => {
   return (
     <div className="min-h-screen bg-neutralMuted dark:bg-dk-bg py-12 px-4 max-w-7xl mx-auto w-full transition-colors duration-300">
-      <div className="mb-12 pt-6">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="mb-12 pt-6"
+      >
         <h1 className="text-5xl font-extrabold text-textTitle dark:text-white uppercase mb-4">Noticias</h1>
-        <div className="w-24 h-1.5 bg-secondary dark:bg-dk-purple mb-4"></div>
+        <motion.div 
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.5, delay: 0.25, ease: 'easeOut' as const }}
+          className="w-24 h-1.5 bg-secondary dark:bg-dk-purple mb-4 origin-left rounded-full"
+        ></motion.div>
         <p className="mt-2 text-gray-600 dark:text-gray-300">Toda la actualidad, resultados y comunicados oficiales del Club Patinatge Borriol.</p>
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {newsItems.map((item) => (

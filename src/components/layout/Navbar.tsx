@@ -13,24 +13,18 @@ const navItems = [
     children: [
       { name: 'Noticias',     path: '/news' },
       { name: 'Reglamentos',  path: '/rules' },
+      { name: 'Enlaces de Interés', path: '/links' },
     ],
   },
   {
     name: 'Disciplinas',
     path: null,
     children: [
-      { name: 'Patinaje Artístico', path: '/artistic' },
+      { name: 'Patinaje Artístico en Línea', path: '/artistic' },
       { name: 'Hockey Línea',       path: '/inline' },
     ],
   },
-  {
-    name: 'Competición',
-    path: null,
-    children: [
-      { name: 'Torneos',    path: '/championships' },
-      { name: 'Resultados', path: '/championships' },
-    ],
-  },
+  { name: 'Competición', path: '/championships', children: null },
   {
     name: 'Multimedia',
     path: null,
@@ -192,7 +186,7 @@ const MobileDrawer = memo(({
             <div className={`flex items-center justify-between px-5 h-20 border-b ${isDark ? 'border-dk-border' : 'border-gray-100'} shrink-0`}>
               <Link to="/" onClick={onClose} className="flex items-center group">
                 <img
-                  src="/logo.png"
+                  src={`${import.meta.env.BASE_URL}logo.png`}
                   alt="Club Patinatge Borriol"
                   className="h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-200"
                   onError={(e) => { e.currentTarget.style.display = 'none'; }}
@@ -339,7 +333,7 @@ export const Navbar = () => {
             {/* Logo */}
             <Link to="/" className="flex-shrink-0 flex items-center group">
               <img
-                src="/logo.png"
+                src={`${import.meta.env.BASE_URL}logo.png`}
                 alt="Club Patinatge Borriol Logo"
                 className="h-14 w-auto object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-md"
                 onError={(e) => {
